@@ -7,6 +7,8 @@ public class Lab1 {
         String name = in.nextLine();
         int loc = name.indexOf(",");
         System.out.println(name.substring(loc+1) +","+  name.substring(0, loc));
+
+
             }
         }
 
