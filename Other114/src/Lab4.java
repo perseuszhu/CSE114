@@ -8,7 +8,7 @@ public class Lab4 {
     System.out.println("What word would you like to append?");
     String word = in.nextLine();
     System.out.println("Where would you like to put this word?");
-    int loc = text.indexOf(word);
+    int loc = in.nextInt();
     System.out.println(text.substring(0,loc) + word +" " + text.substring(loc));
 
     }
