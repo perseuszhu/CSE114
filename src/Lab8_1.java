@@ -6,5 +6,6 @@ public class Lab8_1 {
         System.out.println("Please Enter Phone Number: ");
         String num =in.nextLine();
         System.out.println("("+num.substring(0,3)+")"+num.substring(3,6)+"-"+num.substring(6));
+
     }
 }
