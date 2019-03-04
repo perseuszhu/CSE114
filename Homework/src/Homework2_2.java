@@ -12,11 +12,28 @@ public class Homework2_2 {
                 st4.append(st3[i]);
         }
         String st5 = st4.toString();
+        char[] arr = new char[st5.length()];
+        for (int i = 0; i < st5.length(); i++) {
+            arr[i] = st5.charAt(i);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j < arr.length - i; j++) {
+                if (arr[j - 1] > arr[j]) {
+                    int temp;
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = (char) temp;
+                }
+            }
+        }
+        String result = "";
+        for (int i = 0; i<arr.length ; i++) {
 
-        return st5;
+            result += String.valueOf(arr[i]);
+        }
+        return result;
     }
-
-    public static String bbs(String st) {
+    /*public static String bbs(String st) {
         char[] arr = new char[st.length()];
         for (int i = 0; i < st.length(); i++) {
             arr[i] = st.charAt(i);
@@ -36,6 +53,9 @@ public class Homework2_2 {
 
             result += String.valueOf(arr[x]);
         }
+        return result;
+    }
+    */
         /*StringBuilder sb = new StringBuilder();
         while (true){
             for(int i = 0; i<st.length(); i++){
@@ -48,10 +68,6 @@ public class Homework2_2 {
             String fin = sb.toString().trim();
             return fin;
         }*/
-
-    return result;
-    }
-
 
     public static boolean check(String st1, String st2){
         boolean status = false;
@@ -69,9 +85,9 @@ public class Homework2_2 {
         String st2 = in.nextLine();
         String nsst1 =st5(st1);
         String nsst2 =st5(st2);
-        String fin1 = bbs(nsst1);
-        String fin2 = bbs(nsst2);
-        boolean checkA = check(fin1,fin2);
+        /*String fin1 = bbs(nsst1);
+        String fin2 = bbs(nsst2);*/
+        boolean checkA = check(nsst1,nsst2);
         if(checkA){
             System.out.println(st1+" and "+st2+" are anagrams.");
         }
