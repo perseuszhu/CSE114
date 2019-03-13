@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Lab12_1 {
     public static int[] locateLargest(double[][] a) {
-        double[] x = new double[a.length];
         int[] loc = new int[2];
         double[] tot;
         int len =0;
