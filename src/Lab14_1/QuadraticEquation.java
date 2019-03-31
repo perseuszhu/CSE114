@@ -27,13 +27,19 @@ public class QuadraticEquation {
     }
     public  double getRoot1(){
         double r1=0;
+        if(Math.pow(this.b,2)-4*this.a*this.c>=0)
             r1=(-b+Math.pow((Math.pow(b,2))-4*a*c,0.5))/(2*a);
+        else
+            r1=0;
         return r1;
     }
 
     public  double getRoot2(){
         double r2=0;
+        if(Math.pow(this.b,2)-4*this.a*this.c>=0)
             r2=(-b-Math.pow((Math.pow(b,2))-4*a*c,0.5))/(2*a);
+        else
+            r2=0;
         return r2;
     }
 }
