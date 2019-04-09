@@ -16,7 +16,7 @@ public class Run {
         double x = equ.getX();
         double y = equ.getY();
         boolean status = equ.isSolvable();
-        if(status==false){
+        if(!status){
             System.out.println("The Equation has no Solutions. ");
         }
         else{
