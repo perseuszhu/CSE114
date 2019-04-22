@@ -24,9 +24,14 @@ public class MyPoint {
         dis = Math.sqrt(Math.pow(a.getX()-b.getX(),2)+Math.pow(a.getY()-b.getY(),2));
         return dis;
     }
-    public double distance(MyPoint a, Double x, Double y){
+    public double distance( Double x, Double y){
         double dis;
-        dis = Math.sqrt(Math.pow(a.getX()-x,2)+Math.pow(a.getY()-y,2));
+        dis = Math.sqrt(Math.pow(this.getX()-x,2)+Math.pow(this.getY()-y,2));
+        return dis;
+    }
+    public double distance(MyPoint a){
+        double dis;
+        dis = Math.sqrt(Math.pow(this.getX()-a.getX(),2)+Math.pow(this.getY()-a.getY(),2));
         return dis;
     }
 
