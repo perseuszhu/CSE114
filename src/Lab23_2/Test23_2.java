@@ -13,7 +13,7 @@ public class Test23_2 {
         file.createFile("File");
         String result = file.readFile("File");
         String[] result1 = result.split(" ");
-        String temp = null;
+        String temp;
             for (int i = 0; i < result1.length/2; i++) {
                 temp = result1[i];
                 result1[i] = result1[result1.length - i-1];
