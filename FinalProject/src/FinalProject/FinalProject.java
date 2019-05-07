@@ -51,7 +51,7 @@ public class FinalProject {
 
     }
 
-    public static String[][] step(String[][] board, int loc, String player) {
+    private static String[][] step(String[][] board, int loc, String player) {
         for (int i = 5; i >= 0; i--) {
             if (board[i][loc].equals(" ")) {
                 board[i][loc] = player;
@@ -62,7 +62,7 @@ public class FinalProject {
         return board;
     }
 
-    public static void draw(String[][] board) {
+    private static void draw(String[][] board) {
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 7; j++) {
@@ -72,53 +72,40 @@ public class FinalProject {
             System.out.println();
         }
     }
+    private static void whichOne(String player){
+       if (player == "Y") {
+                System.out.println("The yellow player won.");
+            } else {
+                System.out.println("The red player won.");
+            }
+    }
 
-    public static int win(String[][] board) {
+    private static int win(String[][] board) {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 4; j++) {
                 if (board[i][j] != " " && board[i][j] == board[i][j + 1] && board[i][j] == board[i][j + 2] && board[i][j] == board[i][j + 3]) {
-                    if (board[i][j] == "Y") {
-                        System.out.println("The yellow player won.");
-                        return 0;
-                    } else {
-                        System.out.println("The red player won.");
-                        return 0;
-                    }
+                    whichOne(board[i][j]);
+                    return 0;
                 }
             }
         }
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 7; j++) {
                 if (board[i][j] != " " && board[i][j] == board[i + 1][j] && board[i][j] == board[i + 2][j] && board[i][j] == board[i + 3][j]) {
-                    if (board[i][j] == "Y") {
-                        System.out.println("The yellow player won.");
-                        return 0;
-                    } else {
-                        System.out.println("The red player won.");
-                        return 0;
-                    }
+                    whichOne(board[i][j]);
+                    return 0;
                 }
             }
             for (int j = 0; j < 4; j++) {
                 if (board[i][j] != " " && board[i][j] == board[i + 1][j + 1] && board[i][j] == board[i + 2][j + 2] && board[i][j] == board[i + 3][j + 3]) {
-                    if (board[i][j] == "Y") {
-                        System.out.println("The yellow player won.");
-                        return 0;
-                    } else {
-                        System.out.println("The red player won.");
-                        return 0;
-                    }
+                    whichOne(board[i][j]);
+                    return 0;
                 }
             }
                 for (int j = 3; j < 7; j++) {
                     if (board[i][j] != " " && board[i][j] == board[i + 1][j - 1] && board[i][j] == board[i + 2][j - 2] && board[i][j] == board[i + 3][j - 3]) {
-                        if (board[i][j] == "Y") {
-                            System.out.println("The yellow player won.");
-                            return 0;
-                        } else {
-                            System.out.println("The red player won.");
-                            return 0;
-                        }
+                        whichOne(board[i][j]);
+                        return 0;
                     }
             }
         }
